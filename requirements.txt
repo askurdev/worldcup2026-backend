@@ -1,6 +1,10 @@
-fastapi
-uvicorn
-alembic
-psycopg2-binary
-pydantic-settings
-redis==5.0.1
+alembic==1.18.4
+fastapi==0.137.2
+uvicorn==0.34.0
+sqlalchemy==2.0.51
+psycopg2-binary==2.9.12
+pydantic==2.13.4
+pydantic-settings==2.10.1
+...
+...
+redis==5.0.1     ← ei line ekdum sheshe add korbe
