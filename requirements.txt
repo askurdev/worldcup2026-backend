@@ -2,3 +2,4 @@ fastapi
 uvicorn
 alembic
 psycopg2-binary
+pydantic-settings
