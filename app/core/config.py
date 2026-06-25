@@ -29,17 +29,17 @@ class Settings(BaseSettings):
     LIVE_CACHE_TTL_SECONDS: int = 10  # shorter TTL for /live, since it changes fastest
 
     # ---- CORS ----
-    CORS_ORIGINS: List[str] = ["http://localhost:3000"]
+    CORS_ORIGINS: str = "http://localhost:3000"
 
-    @field_validator("CORS_ORIGINS", mode="before")
-    @classmethod
-    def split_cors_origins(cls, v):
-        # Allows CORS_ORIGINS to be set as a comma-separated string
-        # in .env (e.g. "http://localhost:3000,https://myapp.vercel.app")
-        # while still accepting a real list when set programmatically.
-        if isinstance(v, str):
-            return [origin.strip() for origin in v.split(",") if origin.strip()]
-        return v
+    # @field_validator("CORS_ORIGINS", mode="before")
+    # @classmethod
+    # def split_cors_origins(cls, v):
+    #     # Allows CORS_ORIGINS to be set as a comma-separated string
+    #     # in .env (e.g. "http://localhost:3000,https://myapp.vercel.app")
+    #     # while still accepting a real list when set programmatically.
+    #     if isinstance(v, str):
+    #         return [origin.strip() for origin in v.split(",") if origin.strip()]
+    #     return v
 
     # ---- Auth (for admin panel, Step 2 scope) ----
     SECRET_KEY: str = "CHANGE_ME_IN_PRODUCTION_this_is_a_dev_only_default_key"
