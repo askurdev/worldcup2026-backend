@@ -165,9 +165,6 @@ def _matches_from_db(db, page, page_size, status, stage, group, team_id, date_ut
     total_items = query.count()
     
 
-    
-
-
     total_pages = max(1, math.ceil(total_items / page_size))
     items = query.offset((page - 1) * page_size).limit(page_size).all()
 
